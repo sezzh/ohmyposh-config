@@ -44,6 +44,16 @@
           "style": "plain",
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "type": "git"
+        },
+        {
+          "type": "python",
+          "properties": {
+            "fetch_virtual_env": true
+          },
+          "style": "plain",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#906cff",
+          "template": " \uE235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}( {{ .Venv }} ) {{ end }}{{ .Full }}{{ end }}"
         }
       ],
       "type": "prompt"
