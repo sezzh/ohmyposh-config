@@ -6,12 +6,9 @@
       "segments": [
         {
           "foreground": "#E5C07B",
-          "properties": {
-            "time_format": "15:04"
-          },
           "style": "plain",
-          "template": "[{{ .CurrentDate | date .Format }}]",
-          "type": "time"
+          "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }}",
+          "type": "session"
         },
         {
           "type": "shell",
