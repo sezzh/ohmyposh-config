@@ -53,7 +53,19 @@
           "style": "plain",
           "powerline_symbol": "\uE0B0",
           "foreground": "#906cff",
-          "template": " \uE235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}( {{ .Venv }} ) {{ end }}{{ .Full }}{{ end }}"
+          "template": " (\uE235) {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}[ {{ .Venv }} ] {{ end }}{{ .Full }}{{ end }}"
+        },
+        {
+          "type": "node",
+          "properties": {
+            "fetch_version": true,
+            "display_mode": "always",
+            "home_enabled": true
+          },
+          "style": "plain",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#6CA35E",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }} {{if .Full }}(\uE718){{ end }} {{ .Full }} {{ end }}"
         }
       ],
       "type": "prompt"
@@ -105,7 +117,7 @@
     {
       "alignment": "left",
       "newline": true,
-      "segments": [          
+      "segments": [
         {
           "foreground": "#E06C75",
           "style": "plain",
