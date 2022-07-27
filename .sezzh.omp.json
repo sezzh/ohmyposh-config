@@ -50,7 +50,7 @@
           "style": "plain",
           "powerline_symbol": "\uE0B0",
           "foreground": "#fcff48",
-          "template": " (\uE235) {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}[ {{ .Venv }} ] {{ end }}{{ .Full }}{{ end }}"
+          "template": " (\uE235) {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}[ <#00ffee>{{ .Venv }}</> ] {{ end }}{{ .Full }}{{ end }}"
         },
         {
           "type": "node",
