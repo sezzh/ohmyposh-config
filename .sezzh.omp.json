@@ -5,12 +5,6 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#E5C07B",
-          "style": "plain",
-          "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }}",
-          "type": "session"
-        },
-        {
           "type": "shell",
           "style": "plain",
           "foreground": "#E06C75",
@@ -22,7 +16,13 @@
               "bash": "Bash"
             }
           },
-          "template": " \ue795 {{ .Name }}"
+          "template": "\ue795 {{ .Name }}"
+        },
+        {
+          "foreground": "#bba4ff",
+          "style": "plain",
+          "template": " \uf0e7 {{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }}@{{ .HostName }}",
+          "type": "session"
         },
         {
           "foreground": "#F3C267",
@@ -49,7 +49,7 @@
           },
           "style": "plain",
           "powerline_symbol": "\uE0B0",
-          "foreground": "#906cff",
+          "foreground": "#fcff48",
           "template": " (\uE235) {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}[ {{ .Venv }} ] {{ end }}{{ .Full }}{{ end }}"
         },
         {
@@ -61,7 +61,7 @@
           },
           "style": "plain",
           "powerline_symbol": "\uE0B0",
-          "foreground": "#6CA35E",
+          "foreground": "#4ea139",
           "template": "{{ if .Error }}{{ .Error }}{{ else }} {{if .Full }}(\uE718){{ end }} {{ .Full }} {{ end }}"
         }
       ],
