@@ -41,17 +41,13 @@
           "style": "plain",
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "type": "git"
-        },
-        {
-          "type": "python",
-          "properties": {
-            "fetch_virtual_env": true
-          },
-          "style": "plain",
-          "powerline_symbol": "\uE0B0",
-          "foreground": "#fcff48",
-          "template": " (\uE235) {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}[ <#00ffee>{{ .Venv }}</> ] {{ end }}{{ .Full }}{{ end }}"
-        },
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "segments": [
         {
           "type": "node",
           "properties": {
@@ -61,8 +57,23 @@
           },
           "style": "plain",
           "powerline_symbol": "\uE0B0",
-          "foreground": "#4ea139",
+          "foreground": "#69f845",
           "template": "{{ if .Error }}{{ .Error }}{{ else }} {{if .Full }}(\uE718){{ end }} {{ .Full }} {{ end }}"
+        },
+        {
+          "type": "python",
+          "properties": {
+            "fetch_virtual_env": true,
+            "display_mode": "always",
+            "missing_command_text": "python not working",
+            "display_default": true,
+            "fetch_version": true,
+            "home_enabled": true
+          },
+          "style": "plain",
+          "powerline_symbol": "\uE0B0",
+          "foreground": "#fcff48",
+          "template": "(\uE235) {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}[ <#00ffee>{{ .Venv }}</> ] {{ end }}{{ .Full }}{{ end }}"
         }
       ],
       "type": "prompt"
@@ -91,7 +102,7 @@
           "style": "diamond",
           "template": " {{ .FormattedMs }} ",
           "type": "executiontime"
-        }          
+        }
       ],
       "type": "prompt"
     },
